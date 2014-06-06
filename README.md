@@ -1,0 +1,1 @@
+# Mailchimp Validation Bundle

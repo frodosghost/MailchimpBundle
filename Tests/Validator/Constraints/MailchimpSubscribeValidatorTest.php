@@ -37,18 +37,26 @@ class MailchimpSubscribeValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function testNullIsValid()
     {
+        $subscribe = new MailchimpSubscribe(array(
+            'field' => 'foo',
+        ));
+
         $this->context->expects($this->never())
             ->method('addViolation');
 
-        $this->validator->validate(null, new MailchimpSubscribe());
+        $this->validator->validate(null, $subscribe);
     }
 
     public function testEmptyStringIsValid()
     {
+        $subscribe = new MailchimpSubscribe(array(
+            'field' => 'foo',
+        ));
+
         $this->context->expects($this->never())
             ->method('addViolation');
 
-        $this->validator->validate('', new MailchimpSubscribe());
+        $this->validator->validate('', $subscribe);
     }
 
 }

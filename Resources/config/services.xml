@@ -10,7 +10,6 @@
 
     <services>
         <service id="validator.mailchimp.subscription" class="%mailchimp.subscribe.validator.class%">
-            <argument type="service" id="jb_eway" />
             <argument type="service" id="event_dispatcher" />
             <tag name="validator.constraint_validator" alias="mailchimp.subscribe" />
         </service>

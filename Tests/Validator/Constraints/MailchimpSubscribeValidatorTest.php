@@ -18,11 +18,14 @@ class MailchimpSubscribeValidatorTest extends \PHPUnit_Framework_TestCase
 {
     protected $context;
     protected $validator;
+    protected $dispatcher;
 
     protected function setUp()
     {
         $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', array(), array(), '', false);
-        $this->validator = new MailchimpSubscribeValidator();
+        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcher');
+
+        $this->validator = new MailchimpSubscribeValidator($this->dispatcher);
         $this->validator->initialize($this->context);
     }
 
@@ -30,6 +33,22 @@ class MailchimpSubscribeValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $this->context = null;
         $this->validator = null;
+    }
+
+    public function testNullIsValid()
+    {
+        $this->context->expects($this->never())
+            ->method('addViolation');
+
+        $this->validator->validate(null, new MailchimpSubscribe());
+    }
+
+    public function testEmptyStringIsValid()
+    {
+        $this->context->expects($this->never())
+            ->method('addViolation');
+
+        $this->validator->validate('', new MailchimpSubscribe());
     }
 
 }

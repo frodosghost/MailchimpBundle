@@ -40,10 +40,10 @@ class MailchimpSubscribeValidator extends ConstraintValidator
             $event = new MailchimpEvent($protocol);
 
             $this->getEventDispatcher()->dispatch(MailchimpEvents::MAILCHIMP_VALIDATION, $event);
-        }
 
-        if (!$connection->getResponse()->isOk()) {
-            $this->context->addViolation($constraint->message);
+            if ($event->hasError()) {
+                $this->context->addViolation($constraint->message);
+            }
         }
     }
 

@@ -24,6 +24,6 @@ final class MailchimpEvents
     /**
      * Fired after subscription form is validated
      */
-    const MAILCHIMP_VALIDATION = 'mailchimp.validation';
+    const SUBSCRIBE_VALIDATION = 'mailchimp.subscribe.validation';
 
 }

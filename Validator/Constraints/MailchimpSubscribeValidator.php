@@ -35,11 +35,11 @@ class MailchimpSubscribeValidator extends ConstraintValidator
     public function validate($protocol, Constraint $constraint)
     {
         // Fire card validation
-        if ($this->getEventDispatcher()->hasListeners(MailchimpEvents::MAILCHIMP_VALIDATION)) {
+        if ($this->getEventDispatcher()->hasListeners(MailchimpEvents::SUBSCRIBE_VALIDATION)) {
             // Setup Event
             $event = new MailchimpEvent($protocol);
 
-            $this->getEventDispatcher()->dispatch(MailchimpEvents::MAILCHIMP_VALIDATION, $event);
+            $this->getEventDispatcher()->dispatch(MailchimpEvents::SUBSCRIBE_VALIDATION, $event);
 
             if ($event->hasError()) {
                 $this->context->addViolation($constraint->message);

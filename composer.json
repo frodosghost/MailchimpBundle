@@ -1,8 +1,8 @@
 {
-    "name": "manhattan/mailchimp-validation-bundle",
+    "name": "manhattan/mailchimp-bundle",
     "type": "symfony-bundle",
     "description": "Add validation to a form based on a Mailchimp response",
-    "keywords": ["security", "layout"],
+    "keywords": ["mailchimp", "api", "newsletter", "validation", "subscription"],
     "license": "MIT",
     "authors": [
         {
@@ -12,9 +12,9 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Manhattan\\MailchimpValidationBundle": "" }
+        "psr-0": { "Manhattan\\MailchimpBundle": "" }
     },
-    "target-dir": "Manhattan/MailchimpValidationBundle",
+    "target-dir": "Manhattan/MailchimpBundle",
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": ">=2.3",

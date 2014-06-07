@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the MailchimpValidationBundle package.
+ * This file is part of the Mailchimp Bundle package.
  *
  * (c) Frodosghost <http://frodosghost.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Manhattan\MailchimpValidationBundle;
+namespace Manhattan\MailchimpBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class MailchimpValidationBundle extends Bundle
+class ManhattanMailchimpBundle extends Bundle
 {
 }

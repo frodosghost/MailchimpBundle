@@ -8,7 +8,7 @@ Bundle adds the ability to use Mailchimp bundle within validation to submit and 
         {
             "require": {
                 ...
-                "manhattan/mailchimp-validation-bundle": "dev-master"
+                "manhattan/mailchimp-bundle": "dev-master"
             }
         }
 
@@ -19,7 +19,7 @@ Bundle adds the ability to use Mailchimp bundle within validation to submit and 
         {
             return array(
                 // ...
-                new Manhattan\MailchimpValidationBundle\MailchimpValidationBundle(),
+                new Manhattan\MailchimpBundle\ManhattanMailchimpBundle(),
                 // ...
             );
         }

@@ -20,8 +20,8 @@ class MailchimpEventTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructorNoData()
     {
-        $mailchimp = new MailchimpEvent();
-        $this->assertNull($mailchimp->getData(), '->getData() does not return NULL when no data was configured');
+        $mailchimp = new MailchimpEvent(array());
+        $this->assertEquals(array(), $mailchimp->getData(), '->getData() does not return NULL when no data was configured');
     }
 
     /**
@@ -51,5 +51,20 @@ class MailchimpEventTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($newData, $mailchimp->getData(), '->getData() does not return the data that was set');
         $this->assertNotEquals($data, $mailchimp->getData(), '->getData() returns the first data set on the constructor');
+    }
+
+    /**
+     * Testing ->hasError()
+     */
+    public function testHasError()
+    {
+        $mailchimp = new MailchimpEvent(array());
+
+        $this->assertFalse($mailchimp->hasError(), '->hasError() returns TRUE when no Error class has been set');
+
+        $error = $this->getMockBuilder('Manhattan\MailchimpBundle\Client\Error')->disableOriginalConstructor()->getMock();
+        $mailchimp->setError($error);
+
+        $this->assertTrue($mailchimp->hasError(), '->hasError() returns FALSE when an Error class has been set');
     }
 }

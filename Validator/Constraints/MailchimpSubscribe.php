@@ -18,7 +18,18 @@ use Symfony\Component\Validator\Constraint;
  */
 class MailchimpSubscribe extends Constraint
 {
-    public $message = "Your transaction could not be processed.";
+    public $message = "Your subscription could not be processed.";
+    public $field;
+
+    public function getDefaultOption()
+    {
+        return 'field';
+    }
+
+    public function getRequiredOptions()
+    {
+        return array('field');
+    }
 
     public function getTargets()
     {

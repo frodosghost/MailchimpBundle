@@ -19,6 +19,7 @@ Bundle adds the ability to use Mailchimp bundle within validation to submit and 
         {
             return array(
                 // ...
+                new MZ\MailChimpBundle\MZMailChimpBundle(),
                 new Manhattan\MailchimpBundle\ManhattanMailchimpBundle(),
                 // ...
             );

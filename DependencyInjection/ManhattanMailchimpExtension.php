@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Mailchimp Validation Bundle package.
+ * This file is part of the Manhattan Mailchimp Bundle package.
  *
  * (c) Frodosghost <http://frodosghost.com>
  *

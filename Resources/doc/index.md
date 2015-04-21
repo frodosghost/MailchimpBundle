@@ -28,8 +28,8 @@ Installation
     {
         return array(
             // ...
-            new MZ\MailChimpBundle\MZMailChimpBundle(),
-                new Manhattan\MailchimpBundle\ManhattanMailchimpBundle(),
+            new Hype\MailchimpBundle\HypeMailchimpBundle(),
+            new Manhattan\MailchimpBundle\ManhattanMailchimpBundle(),
             // ...
         );
     }
